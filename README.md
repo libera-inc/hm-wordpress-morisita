@@ -99,12 +99,6 @@ LIBERA-TEMPLATE/
 3. ファイルを編集・保存
 4. ブラウザが自動でリロード
 
-## テーマファイル以外のデータ
-
-下記に WPvivid で共有しているデータがあります。
-
-https://drive.google.com/drive/folders/1g7_8POR_k05KpOLkvKDo86KO3EdS5PMd?usp=sharing
-
 ## 注意事項
 
 -   `node_modules/` は Git にコミットしないでください
