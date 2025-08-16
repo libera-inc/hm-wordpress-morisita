@@ -31,7 +31,7 @@ npm install
   },
 ```
 
-上記の URL を環境に合わせて変更してください。
+上記の http://localhost:10013 を環境に合わせて変更してください。
 
 ## 開発の開始
 
@@ -45,7 +45,7 @@ npm run dev
 
 実行後、ターミナルに表示される URL（通常は `http://localhost:3000`）にアクセスしてください。
 
-**注意**: 元の WordPress サイト（`http://localhost:10023`）ではなく、Browser Sync が提供する URL（`http://localhost:3000`）を使用してください。
+**注意**: 元の WordPress サイト（`http://localhost:10013`）ではなく、Browser Sync が提供する URL（`http://localhost:3000`）を使用してください。
 
 ### 監視対象ファイル
 
@@ -98,6 +98,12 @@ LIBERA-TEMPLATE/
 2. Cursor で Live Sass Compiler を有効化
 3. ファイルを編集・保存
 4. ブラウザが自動でリロード
+
+## テーマファイル以外のデータ
+
+下記に WPvivid で共有しているデータがあります。
+
+https://drive.google.com/drive/folders/1g7_8POR_k05KpOLkvKDo86KO3EdS5PMd?usp=sharing
 
 ## 注意事項
 
