@@ -1,0 +1,8 @@
+@use "foundation";
+@use "global/single-contents" as *;
+
+// /*!
+// editor-style
+// ------------------------------
+// */
+@include single-contents();

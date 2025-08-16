@@ -1,0 +1,94 @@
+@use "../../global" as g;
+
+/*!
+page > access > access-post
+------------------------------
+*/
+.access-posts {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include g.mq() {
+        grid-template-columns: 1fr 1fr;
+        gap: 72px 40px;
+    }
+}
+
+.access-post {
+    &:nth-child(1) {
+        @include g.mq() {
+            grid-column: 1/-1;
+            display: grid;
+            grid-template-columns: auto auto;
+
+            .access-post-title {
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+
+            .access-post-address {
+                grid-column: 1/2;
+                grid-row: 2/3;
+            }
+
+            .access-post-map-link {
+                grid-column: 2/3;
+                grid-row: 1/3;
+                align-self: end;
+                justify-self: end;
+            }
+
+            .access-post-map {
+                grid-column: 1/-1;
+                grid-row: 3/4;
+                margin-top: 24px;
+
+                iframe {
+                    aspect-ratio: 1000/408;
+                }
+            }
+        }
+    }
+}
+
+.access-post-title {
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+
+    @include g.mq() {
+        font-size: 24px;
+    }
+}
+
+.access-post-address {
+    margin-top: 8px;
+
+    @include g.mq() {
+        margin-top: 11px;
+    }
+}
+
+.access-post-map-link {
+    margin-top: 16px;
+
+    @include g.mq() {
+        margin-top: 13px;
+    }
+}
+
+.access-post-map {
+    margin-top: 16px;
+
+    iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 340/226;
+        border-radius: 0 0 0 32px;
+
+        @include g.mq() {
+            aspect-ratio: 480/320;
+            border-radius: 0 0 0 56px;
+        }
+    }
+}

@@ -1,0 +1,225 @@
+@use "../global" as g;
+
+/*!
+layout > footer
+------------------------------
+*/
+.l-footer {
+    padding: 80px 0;
+    border-radius: 32px 32px 0 0;
+    background: var(--color-darkblue);
+    color: var(--color-white);
+    position: relative;
+
+    @include g.mq() {
+        border-radius: 56px 56px 0 0;
+    }
+}
+
+.l-footer-to-top {
+    --size: 80px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background-color: var(--color-darkblue);
+    border: 2px solid var(--color-darkblue);
+    display: grid;
+    place-items: center;
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    transform: translateX(-50%);
+    transition: background-color 0.3s;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 14px;
+        height: 12px;
+        mask-image: url("../img/arrow-to-top.svg");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: var(--color-white);
+        transition: background-color 0.3s;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: var(--color-white);
+
+            &::after {
+                background-color: var(--color-darkblue);
+            }
+        }
+    }
+
+    img {
+        width: 14px;
+    }
+}
+
+.l-footer-inner {
+    @include g.mq(lg) {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 40px 40px;
+    }
+}
+
+.l-footer-info {
+    @include g.mq(lg) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+}
+
+.l-footer-logo {
+    width: 160px;
+    margin-inline: auto;
+
+    @include g.mq() {
+        width: 246px;
+    }
+
+    @include g.mq(lg) {
+        margin: 0;
+    }
+}
+
+.l-footer-address {
+    font-size: 13px;
+    line-height: 1.45;
+    margin-top: 32px;
+    text-align: center;
+    opacity: 0.8;
+
+    @include g.mq(lg) {
+        text-align: left;
+    }
+}
+
+.l-footer-tel {
+    text-align: center;
+    margin-top: 8px;
+    opacity: 0.8;
+
+    @include g.mq(lg) {
+        text-align: left;
+    }
+}
+
+.l-footer-tel-label {
+    font-size: 13px;
+    font-family: var(--font-family-en);
+    line-height: 1.15;
+}
+
+.l-footer-tel-number {
+    font-family: var(--font-family-en);
+    font-size: 21px;
+    line-height: 1.15;
+}
+
+.l-footer-list-wrap {
+    display: none;
+
+    @include g.mq() {
+        margin-top: 56px;
+        display: block;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 0 64px;
+        width: fit-content;
+        margin-inline: auto;
+    }
+
+    @include g.mq(lg) {
+        margin: 0;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        gap: 0 96px;
+        justify-self: end;
+    }
+}
+
+.l-footer-list01,
+.l-footer-list02,
+.l-footer-list03,
+.l-footer-submenu {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.45;
+}
+
+.l-footer-list01 {
+    gap: 16px;
+
+    .l-footer-item {
+        &:first-child {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.l-footer-list02 {
+    gap: 40px;
+
+    .l-footer-business-text {
+        margin-bottom: 16px;
+        display: block;
+    }
+}
+
+.l-footer-submenu {
+    gap: 12px;
+}
+
+.l-footer-list03 {
+    gap: 24px;
+}
+
+.l-footer-link,
+.l-footer-business-text {
+    font-size: 15px;
+}
+
+.l-footer-submenu-link {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.l-footer-link,
+.l-footer-submenu-link {
+    span {
+        background-image: linear-gradient(currentColor, currentColor);
+        background-position: 0 100%;
+        background-size: 0 1px;
+        background-repeat: no-repeat;
+        transition: background-size 0.3s;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            span {
+                background-size: 100% 1px;
+            }
+        }
+    }
+}
+
+.l-footer-copyright {
+    font-family: var(--font-family-en);
+    line-height: 1.15;
+    display: block;
+    margin-top: 56px;
+    text-align: center;
+    font-size: 13px;
+
+    @include g.mq(lg) {
+        margin-top: 0;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: left;
+    }
+}

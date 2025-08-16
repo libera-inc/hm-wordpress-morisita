@@ -1,0 +1,71 @@
+@use "../../global" as g;
+
+/*!
+page > message > message-contents
+------------------------------
+*/
+.message-contents {
+    @include g.mq() {
+        display: grid;
+        grid-template-columns: 40% 1fr;
+        gap: 56px;
+    }
+}
+
+.message-contents-img {
+    img {
+        border-radius: 0 0 0 32px;
+
+        @include g.mq() {
+            border-radius: 0 0 0 56px;
+        }
+    }
+}
+
+.message-contents-text {
+    margin-top: 32px;
+    font-size: 28px;
+    line-height: 1.45;
+    letter-spacing: 0.05em;
+
+    &::first-line {
+        color: var(--color-primary);
+    }
+
+    @include g.mq() {
+        margin-top: 0;
+        font-size: 32px;
+    }
+}
+
+.message-contents-text02 {
+    margin-top: 16px;
+
+    @include g.mq() {
+        margin-top: 24px;
+    }
+
+    > * {
+        &:not(:first-child) {
+            margin-top: 12px;
+        }
+    }
+}
+
+.message-contents-name {
+    margin-top: 32px;
+
+    @include g.mq() {
+        margin-top: 40px;
+    }
+}
+
+.message-contents-name-text02 {
+    font-size: 28px;
+    line-height: 1.45;
+    letter-spacing: 0.05em;
+
+    @include g.mq() {
+        font-size: 32px;
+    }
+}

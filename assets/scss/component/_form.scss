@@ -1,0 +1,29 @@
+@use "../global" as g;
+
+/*!
+component > title
+------------------------------
+*/
+// text & textarea
+.c-form-text {
+    padding: 16px;
+    background-color: var(--color-lightest-blue);
+    outline: 0;
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.45;
+    border-radius: 4px;
+}
+
+.c-form-text::placeholder {
+    opacity: 0.6;
+}
+
+.c-form-text:focus {
+    box-shadow: 0 0 0 1px var(--color-outline-focus-inside) inset, 0 0 0 4px var(--color-outline-focus-outside);
+}
+
+.c-form-text--textarea {
+    min-height: 160px;
+    field-sizing: content;
+}

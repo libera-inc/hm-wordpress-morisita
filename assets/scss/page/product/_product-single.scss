@@ -1,0 +1,101 @@
+@use "../../global" as g;
+
+/*!
+page > product > product-single
+------------------------------
+*/
+
+.product-single-img-big {
+    img {
+        border: 1px solid var(--color-border);
+        border-radius: 0 0 0 32px;
+
+        @include g.mq() {
+            border-radius: 0 0 0 56px;
+        }
+    }
+}
+
+.product-single-imgs {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 16px;
+
+    @include g.mq() {
+        gap: 16px;
+        margin-top: 24px;
+    }
+}
+
+.product-single-img {
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    transition: border-color 0.3s;
+
+    &.is-active {
+        border-color: var(--color-primary, #000);
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            img {
+                scale: 1.1;
+            }
+        }
+    }
+
+    img {
+        --size: 72px;
+        width: var(--size);
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        transition: scale 0.3s;
+
+        @include g.mq() {
+            --size: 104px;
+        }
+    }
+}
+
+.product-single-table {
+    margin-top: 40px;
+
+    @include g.mq() {
+        margin-top: 56px;
+    }
+
+    .wp-block-table {
+        margin: 0;
+    }
+
+    tr {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 4px 0;
+        border-bottom: 1px solid var(--color-border);
+        padding: 24px 0;
+
+        &:first-child {
+            border-top: 1px solid var(--color-border);
+        }
+
+        @include g.mq() {
+            grid-template-columns: 224px 1fr;
+            padding: 32px 0;
+        }
+    }
+
+    td,
+    th {
+        padding: 0 !important;
+        border: none !important;
+    }
+
+    td {
+        &:first-child {
+            font-weight: 700;
+            line-height: 1.45;
+        }
+    }
+}

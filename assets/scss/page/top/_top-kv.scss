@@ -1,0 +1,163 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-kv
+------------------------------
+*/
+.top-kv {
+    height: 85vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+
+    @include g.mq() {
+        height: 95vh;
+    }
+}
+
+.top-kv-bg-filter,
+.top-kv-bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.top-kv-bg-filter {
+    z-index: calc(var(--z-index-default) + 1);
+}
+
+.top-kv-bg {
+    z-index: var(--z-index-default);
+
+    &.splide {
+        height: 100%;
+    }
+
+    .splide__track,
+    .splide__list,
+    .splide__slide {
+        height: 100%;
+    }
+
+    .splide__slide {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.top-kv-text-wrap {
+    z-index: calc(var(--z-index-default) + 3);
+    color: var(--color-white);
+    padding-bottom: 104px;
+    width: 100%;
+}
+
+.top-kv-text-inner {
+    --ring-size: 104px;
+
+    @include g.mq() {
+        --ring-size: 146px;
+    }
+
+    @include g.mq(lg) {
+        display: grid;
+        grid-template-columns: 1fr var(--ring-size);
+    }
+}
+
+// progress UI
+.top-kv-progress {
+    width: var(--ring-size);
+    height: var(--ring-size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-family-en);
+    font-size: 25px;
+    line-height: 1.15;
+    letter-spacing: 0.05em;
+    position: relative;
+
+    @include g.mq() {
+        font-size: 36px;
+    }
+
+    @include g.mq(lg) {
+        grid-row: 1/3;
+        grid-column: 2/3;
+        align-self: end;
+    }
+
+    &::after {
+        --ring-color: rgba(255, 255, 255, 0.25);
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: conic-gradient(var(--color-white) 0deg, var(--color-white) var(--deg, 0deg), var(--ring-color) var(--deg, 0deg), var(--ring-color) 360deg);
+        mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 0);
+    }
+}
+
+.top-kv-text {
+    font-size: 30px;
+    line-height: 1.45;
+    margin-top: 32px;
+
+    @include g.mq() {
+        font-size: 55px;
+    }
+
+    @include g.mq(lg) {
+        margin-top: 0;
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    span {
+        display: block;
+    }
+}
+
+.top-kv-text02 {
+    opacity: 0.68;
+    line-height: 1.5;
+    font-size: 18px;
+    font-family: var(--font-family-en);
+    letter-spacing: 0.05em;
+    margin-top: 9px;
+
+    @include g.mq() {
+        font-size: 20px;
+        line-height: 1.7;
+        margin-top: 24px;
+    }
+
+    @include g.mq(lg) {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    span {
+        display: block;
+
+        @include g.mq() {
+            display: inline-block;
+
+            &:nth-child(2) {
+                margin-left: 6px;
+            }
+        }
+    }
+}

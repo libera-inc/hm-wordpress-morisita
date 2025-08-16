@@ -1,0 +1,222 @@
+@use "../../global" as g;
+
+/*!
+page > business > business-single
+------------------------------
+*/
+.business-single {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include g.mq(lg) {
+        grid-template-columns: 240px 1fr;
+        gap: 155px;
+        align-items: start;
+    }
+}
+
+.business-single-side {
+    display: none;
+
+    @include g.mq(lg) {
+        display: block;
+        position: sticky;
+        left: 0;
+        top: 40px;
+    }
+}
+
+.business-single-section-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.business-single-title-en {
+    color: var(--color-primary);
+    font-family: var(--font-family-en);
+    font-size: 16px;
+    line-height: 1.15;
+
+    @include g.mq() {
+        font-size: 20px;
+    }
+}
+
+.business-single-title {
+    font-size: 24px;
+    letter-spacing: 0.05em;
+    line-height: 1.45;
+
+    @include g.mq() {
+        font-size: 32px;
+    }
+}
+
+.business-single-problem-text {
+    margin-top: 16px;
+
+    @include g.mq() {
+        margin-top: 24px;
+    }
+}
+
+.business-single-list {
+    padding: 32px 20px;
+    background-color: var(--color-lightest-blue);
+    margin-top: 24px;
+
+    @include g.mq() {
+        padding: 48px 40px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    li {
+        font-size: 16px;
+        letter-spacing: 0.05em;
+        font-weight: 700;
+        line-height: 1.45;
+        display: flex;
+        gap: 16px;
+
+        @include g.mq() {
+            font-size: 18px;
+        }
+
+        &:before {
+            --size: 21px;
+            content: "";
+            display: block;
+            width: var(--size);
+            height: var(--size);
+            background-image: url("../img/icon-check.svg");
+            background-size: 13px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: var(--color-primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+            translate: 0 2px;
+
+            @include g.mq() {
+                --size: 27px;
+                background-size: 17px;
+                translate: 0 0;
+            }
+        }
+    }
+}
+
+.business-single-feature-items {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    @include g.mq() {
+        margin-top: 32px;
+    }
+}
+
+.business-single-feature-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    @include g.mq() {
+        gap: 32px;
+        grid-template-columns: 240px 1fr;
+        align-items: center;
+    }
+}
+
+.business-single-feature-img {
+    img {
+        border-radius: 0 0 0 40px;
+        aspect-ratio: 340 / 170;
+        object-fit: cover;
+
+        @include g.mq() {
+            aspect-ratio: 240 / 160;
+        }
+    }
+}
+
+.business-single-feature-title {
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: 0.05em;
+
+    @include g.mq() {
+        font-size: 24px;
+    }
+}
+
+.business-single-feature-text {
+    margin-top: 10px;
+}
+
+.business-single-flow-items {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    counter-reset: flowStep;
+
+    @include g.mq() {
+        margin-top: 32px;
+    }
+}
+
+.business-single-flow-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+    gap: 16px;
+
+    @include g.mq() {
+        grid-template-columns: 150px 1fr;
+    }
+}
+
+.business-single-flow-title {
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: 0.05em;
+
+    @include g.mq() {
+        font-size: 24px;
+    }
+
+    &:before {
+        content: counter(flowStep, decimal-leading-zero) ".";
+        counter-increment: flowStep;
+        display: block;
+        color: var(--color-primary);
+        font-family: var(--font-family-en);
+        font-size: 16px;
+        line-height: 1.15;
+        letter-spacing: 0.05em;
+
+        @include g.mq() {
+            font-size: 24px;
+        }
+    }
+}
+
+.business-single-flow-text {
+    margin-top: 3px;
+    font-size: 14px;
+    line-height: 1.45;
+    letter-spacing: 0.05em;
+
+    @include g.mq() {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+}

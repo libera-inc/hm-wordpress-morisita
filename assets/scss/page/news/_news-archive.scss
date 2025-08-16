@@ -1,0 +1,26 @@
+@use "../../global" as g;
+
+/*!
+page > news > news-post
+------------------------------
+*/
+.news-archive {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 80px;
+
+    @include g.mq() {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+    }
+
+    > * {
+        &:first-child {
+            order: 1;
+
+            @include g.mq() {
+                order: 0;
+            }
+        }
+    }
+}

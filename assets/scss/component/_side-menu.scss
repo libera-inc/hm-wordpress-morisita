@@ -1,0 +1,79 @@
+@use "../global" as g;
+
+/*!
+component > side-menu
+------------------------------
+*/
+.c-side-menu-title-en {
+    color: var(--color-primary);
+    font-family: var(--font-family-en);
+    font-size: 40px;
+    font-weight: 400;
+    display: block;
+    line-height: 1.15;
+}
+
+.c-side-menu-title-ja {
+    color: var(--color-text-light);
+    font-size: 15px;
+    line-height: 1.45;
+    margin-top: 8px;
+}
+
+.c-side-menu-list {
+    margin-top: 24px;
+
+    li {
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 9px;
+            height: 9px;
+            mask-image: url("../img/arrow.svg");
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center;
+            background-color: var(--color-primary);
+            margin-left: auto;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            pointer-events: none;
+        }
+    }
+
+    a {
+        padding: 8px 0;
+        display: flex;
+        align-items: baseline;
+        line-height: 1.15;
+        font-size: 19px;
+        opacity: 0.5;
+        transition: opacity 0.3s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        &.is-current {
+            opacity: 1;
+        }
+    }
+
+    span {
+        font-family: var(--color-font-base);
+        line-height: 1.5;
+        font-size: 16px;
+    }
+
+    &.--news {
+        a {
+            font-family: var(--font-family-en);
+        }
+    }
+}

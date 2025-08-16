@@ -1,0 +1,10 @@
+@use "./breakpoints" as g;
+
+/*!
+global > content-size
+------------------------------
+*/
+:root {
+    --content-width: 1000px;
+    --content-width-l: 1300px;
+}

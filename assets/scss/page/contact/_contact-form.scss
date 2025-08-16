@@ -1,0 +1,150 @@
+@use "../../global" as g;
+
+/*!
+page > contact > contact-form
+------------------------------
+*/
+.contact-form-text {
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    @include g.mq() {
+        gap: 32px;
+    }
+}
+
+.contact-form-item {
+    p {
+        @include g.mq() {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            align-items: start;
+            gap: 16px;
+        }
+    }
+
+    &.--consent {
+        p {
+            @include g.mq() {
+                display: block;
+            }
+        }
+    }
+}
+
+.contact-form-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-base, #49515f);
+    font-weight: 700;
+    line-height: 1.45;
+    margin-bottom: 8px;
+
+    @include g.mq() {
+        margin-bottom: 0;
+    }
+
+    &.--text {
+        @include g.mq() {
+            translate: 0 16px;
+        }
+    }
+}
+
+// 必須
+.contact-form-required {
+    color: var(--color-red);
+    font-size: 14px;
+    line-height: 1.45;
+    letter-spacing: 0.05em;
+
+    &::before {
+        content: "*";
+        display: inline-block;
+        margin-right: 2px;
+    }
+}
+
+// 同意テキスト
+.contact-form-consent-text {
+    text-align: center;
+    margin-top: 24px;
+
+    a {
+        text-decoration: underline;
+        color: var(--color-link);
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+// 送信ボタン
+.contact-form-button {
+    display: grid;
+    place-items: center;
+    margin-top: 24px;
+
+    p {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    input {
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        padding: 24px 32px;
+        color: var(--color-white);
+        font-size: 18px;
+        line-height: 1.45;
+        letter-spacing: 0.05em;
+        background-color: var(--color-primary);
+        border-radius: 100vh;
+        border: 1px solid var(--color-primary);
+        transition: background-color 0.3s, color 0.3s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: var(--color-white);
+                color: var(--color-primary);
+            }
+        }
+    }
+
+    .wpcf7-spinner {
+        margin: 20px auto 0;
+        display: none; // 送信前はローディング非表示
+    }
+}
+
+// 送信中のローディング表示
+form.submitting .wpcf7-spinner {
+    display: block !important;
+}
+
+// 送信ボタン下のメッセージ
+.wpcf7-response-output {
+    text-align: center;
+    padding: 16px 8px !important;
+    border: 1px solid var(--color-red) !important;
+    color: var(--color-red) !important;
+    background-color: rgb(255, 232, 232);
+    margin: 24px 0 0 !important;
+}
+
+// バリデーション
+.wpcf7-not-valid-tip {
+    margin-top: 6px;
+    color: var(--color-red) !important;
+    line-height: 1.45;
+}

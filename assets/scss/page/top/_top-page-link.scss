@@ -1,0 +1,104 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-page-link
+------------------------------
+*/
+.top-page-links {
+    padding: calc(80px - 32px) 0;
+
+    @include g.mq(lg) {
+        padding: 80px 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.top-page-link {
+    border-bottom: 1px solid var(--color-border);
+
+    @include g.mq(lg) {
+        border-bottom: none;
+
+        &:not(:first-child) {
+            border-left: 1px solid var(--color-border);
+        }
+    }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        padding: 32px 16px;
+        transition: background-color 0.3s;
+        height: 100%;
+
+        @include g.mq(lg) {
+            padding: 16px 46px;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                .top-page-link-arrow {
+                    background-color: var(--color-primary);
+
+                    &::before {
+                        background-color: var(--color-white);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.top-page-link-title {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.top-page-link-text {
+    margin-top: 16px;
+
+    @include g.mq(lg) {
+        margin-top: 32px;
+    }
+}
+
+.top-page-link-arrow-wrap {
+    margin-top: auto;
+    padding-top: 16px;
+
+    @include g.mq() {
+        padding-top: 32px;
+    }
+}
+
+.top-page-link-arrow {
+    margin-top: auto;
+    display: block;
+    width: 40px;
+    aspect-ratio: 1/1;
+    background-color: var(--color-lightest-blue);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    margin-left: auto;
+    transition: background-color 0.3s;
+
+    @include g.mq(lg) {
+        width: 44px;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: 12px;
+        height: 12px;
+        mask-image: url("../img/arrow.svg");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: var(--color-primary);
+        transition: background-color 0.3s;
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "name": "libera-template",
+    "version": "1.0.0",
+    "scripts": {
+        "dev": "browser-sync start --proxy 'http://localhost:10013' --files '**/*.php' '**/*.css' '**/*.js' --no-notify --no-open"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.29.3"
+    }
+}

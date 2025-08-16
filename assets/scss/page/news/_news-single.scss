@@ -1,0 +1,35 @@
+@use "../../global" as g;
+@use "../../global/single-contents" as *;
+
+/*!
+page > news > news-single
+------------------------------
+*/
+.news-single-contents {
+    > * {
+        margin: 16px 0;
+    }
+
+    @include single-contents();
+}
+
+.news-single-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 80px;
+}
+
+.news-single-navigation-link {
+    &.--prev {
+        &::after {
+            transform: rotate(180deg);
+            order: -1;
+        }
+    }
+
+    &.--next {
+        margin-left: auto;
+    }
+}

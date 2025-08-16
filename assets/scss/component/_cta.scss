@@ -1,0 +1,126 @@
+@use "../global" as g;
+
+/*!
+component > cta
+------------------------------
+*/
+.c-cta {
+    border-radius: 32px 32px 0 0;
+    padding: 88px 0 55px;
+    background-color: var(--color-lightest-blue);
+    position: relative;
+
+    @include g.mq() {
+        border-radius: 56px 56px 0 0;
+        padding: 133px 0 86px;
+    }
+
+    &:after {
+        --size: 80px;
+        content: "";
+        display: block;
+        width: 100%;
+        height: var(--size);
+        background-color: var(--color-lightest-blue);
+        position: absolute;
+        left: 0;
+        bottom: calc(var(--size) * -1);
+    }
+}
+
+.c-cta-bg-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    pointer-events: none;
+    overflow: hidden;
+
+    // Splideのデフォルトスタイルをリセット
+    .splide__track {
+        overflow: visible;
+    }
+
+    .splide__list {
+        display: flex;
+        align-items: center;
+    }
+
+    .splide__slide {
+        flex-shrink: 0;
+    }
+}
+
+.c-cta-bg-text-item {
+    font-size: 120px;
+    color: var(--color-primary);
+    font-family: var(--font-family-en);
+    line-height: 1.15;
+    opacity: 0.07;
+    white-space: nowrap;
+    display: block;
+
+    @include g.mq() {
+        font-size: 176px;
+    }
+}
+
+.c-cta-link {
+    --size: 240px;
+    display: block;
+    width: var(--size);
+    margin-inline: auto;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    color: var(--color-white);
+    border: 1px solid var(--color-primary);
+    position: relative;
+    z-index: var(--z-index-default);
+    transition: scale 0.3s;
+
+    @include g.mq() {
+        --size: 308px;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            scale: 1.05;
+        }
+    }
+}
+
+.c-cta-link-inner {
+    --margin: 11px;
+    display: block;
+    margin: var(--margin);
+    background: linear-gradient(156deg, #0d6bc7 14.11%, #1e55ab 87.4%);
+    width: calc(var(--size) - var(--margin) * 2);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    @include g.mq() {
+        --margin: 14px;
+        gap: 16px;
+    }
+}
+
+.c-cta-link-text {
+    font-family: var(--font-family-en);
+    font-size: 32px;
+    line-height: 1.15;
+
+    @include g.mq() {
+        font-size: 40px;
+    }
+}
+
+.c-cta-link-text02 {
+    font-size: 15px;
+    line-height: 1.45;
+}

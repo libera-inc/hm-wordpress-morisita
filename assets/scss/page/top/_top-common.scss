@@ -1,0 +1,38 @@
+@use "../../global" as g;
+
+/*!
+page > top > top-common
+------------------------------
+*/
+.top-title-en {
+    font-family: var(--font-family-en);
+    font-size: 40px;
+    line-height: 1.15;
+    color: var(--color-primary);
+}
+
+.top-title-ja {
+    line-height: 1.45;
+    color: var(--color-text-light);
+    font-size: 15px;
+}
+
+.top-small-title-en {
+    font-size: 20px;
+    line-height: 1.15;
+    font-family: var(--font-family-en);
+    color: var(--color-primary);
+}
+
+.top-small-title-en--white {
+    color: var(--color-white);
+}
+
+.top-small-title-ja {
+    line-height: 1.45;
+    color: var(--color-text-light);
+}
+
+.top-small-title-ja--white {
+    color: var(--color-white);
+}

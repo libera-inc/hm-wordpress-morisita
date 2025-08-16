@@ -1,0 +1,18 @@
+@use "../../global" as g;
+
+/*!
+page > product > product-post
+------------------------------
+*/
+
+.product-archive-posts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    gap: 24px 20px;
+
+    @include g.mq(lg) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 64px 44px;
+    }
+}

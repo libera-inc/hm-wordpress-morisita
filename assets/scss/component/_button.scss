@@ -1,0 +1,53 @@
+@use "../global" as g;
+
+/*!
+component > button
+------------------------------
+*/
+.c-button {
+    display: block;
+    width: fit-content;
+    background-color: var(--color-lightest-blue);
+    border-radius: 100vh;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 43px;
+    font-size: 16px;
+    font-family: var(--font-family-en);
+    line-height: 1.15;
+    transition: background-color 0.3s, color 0.3s;
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+
+            &::after {
+                background-color: var(--color-white);
+            }
+        }
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 12px;
+        height: 12px;
+        mask-image: url("../img/arrow.svg");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        background-color: var(--color-primary);
+        transition: background-color 0.3s;
+    }
+}
+
+.c-button--skeleton {
+    border: 1px solid var(--color-white);
+    background: rgba(255, 255, 255, 0.2);
+
+    &::after {
+        background-color: var(--color-white);
+    }
+}

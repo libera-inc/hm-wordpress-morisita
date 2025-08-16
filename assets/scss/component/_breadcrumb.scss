@@ -1,0 +1,55 @@
+@use "../global" as g;
+
+/*!
+component > breadcrumb
+------------------------------
+*/
+
+.c-breadcrumb {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+
+    @include g.mq() {
+        margin-top: 30px;
+    }
+
+    > * {
+        font-size: 14px;
+        letter-spacing: 0.05em;
+        line-height: 1.45;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        &:first-child {
+            line-height: 1.15;
+            font-family: var(--font-family-en);
+        }
+
+        &:last-child {
+            color: var(--color-primary);
+        }
+
+        &:not(:last-child) {
+            &::after {
+                content: "";
+                display: block;
+                width: 9px;
+                height: 9px;
+                mask-image: url("../img/arrow.svg");
+                mask-size: contain;
+                mask-repeat: no-repeat;
+                mask-position: center;
+                background-color: var(--color-primary);
+            }
+        }
+    }
+}
+
+.c-breadcrumb-error {
+    line-height: 1.15;
+    font-family: var(--font-family-en);
+}

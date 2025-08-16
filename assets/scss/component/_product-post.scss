@@ -1,0 +1,79 @@
+@use "../global" as g;
+
+/*!
+component > product-post
+------------------------------
+*/
+.c-product-post {
+    a {
+        @media (any-hover: hover) {
+            &:hover {
+                .c-product-post-thumbnail {
+                    img {
+                        transform: scale(1.05);
+                    }
+                }
+
+                .c-product-post-title {
+                    span {
+                        background-size: 100% 1px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.c-product-post-thumbnail {
+    border: 1px solid var(--color-border);
+    border-radius: 0 0 0 24px;
+    overflow: hidden;
+
+    @include g.mq() {
+        border-radius: 0 0 0 32px;
+    }
+
+    img {
+        aspect-ratio: 160/106;
+        object-fit: cover;
+        transition: transform 0.3s ease-in-out;
+
+        @include g.mq() {
+            aspect-ratio: 404/269;
+        }
+    }
+}
+
+.c-product-post-term {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 1.45;
+    padding: 2px 8px;
+    border-radius: 100vh;
+    border: 1px solid var(--color-font-base);
+    margin-top: 8px;
+
+    @include g.mq() {
+        font-size: 16px;
+        margin-top: 16px;
+    }
+}
+
+.c-product-post-title {
+    margin-top: 6px;
+    line-height: 1.45;
+    letter-spacing: 0.05em;
+
+    @include g.mq() {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    span {
+        background-image: linear-gradient(currentColor, currentColor);
+        background-position: 0 100%;
+        background-size: 0 1px;
+        background-repeat: no-repeat;
+        transition: background-size 0.3s;
+    }
+}

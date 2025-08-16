@@ -1,0 +1,17 @@
+@use "top/top-common";
+@use "top/top-kv";
+@use "top/top-news";
+@use "top/top-business";
+@use "top/top-product";
+@use "top/top-page-link";
+@use "news/news-archive";
+@use "news/news-single";
+@use "privacy/privacy-contents";
+@use "access/access-post";
+@use "message/message-contents";
+@use "company/company-contents";
+@use "product/product-post";
+@use "product/product-single";
+@use "contact/contact-form";
+@use "business/business-single";
+@use "error/error-text";

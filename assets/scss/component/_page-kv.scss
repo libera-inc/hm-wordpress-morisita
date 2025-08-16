@@ -1,0 +1,138 @@
+@use "../global" as g;
+
+/*!
+component > page-kv
+------------------------------
+*/
+.c-page-kv {
+    background-color: var(--color-lightest-blue);
+    display: flex;
+    padding: 121px 0 46px;
+    position: relative;
+
+    @include g.mq() {
+        padding: 183px 0 99px;
+    }
+}
+
+.c-page-kv-en {
+    color: var(--color-primary);
+    font-family: var(--font-family-en);
+    font-size: 50px;
+    line-height: 1.15;
+
+    @include g.mq() {
+        font-size: 72px;
+    }
+}
+
+.c-page-kv-title {
+    line-height: 1.45;
+    letter-spacing: 0.05em;
+    margin-top: 8px;
+
+    @include g.mq() {
+        font-size: 18px;
+        margin-top: 16px;
+    }
+}
+
+/* singleページ */
+.c-page-kv-single {
+    background-color: var(--color-lightest-blue);
+    display: flex;
+}
+
+.c-page-kv-single-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 19px;
+    padding: 121px 0 46px;
+    position: relative;
+
+    @include g.mq() {
+        padding: 183px 0 99px;
+    }
+
+    @include g.mq(lg) {
+        grid-template-columns: 1fr 484px;
+        gap: 56px;
+    }
+}
+
+.c-page-kv-single-title-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-page-kv-single-title-type {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.c-page-kv-single-en {
+    color: var(--color-primary);
+    font-family: var(--font-family-en);
+    font-size: 20px;
+    line-height: 1.15;
+
+    @include g.mq() {
+        font-size: 24px;
+    }
+}
+
+.c-page-kv-single-ja {
+    color: var(--color-text-light);
+    line-height: 1.45;
+
+    @include g.mq() {
+        font-size: 18px;
+    }
+}
+
+.c-page-kv-single-date {
+    font-size: 17px;
+    line-height: 1.15;
+    font-family: var(--font-family-en);
+}
+
+.c-page-kv-single-title {
+    font-size: 28px;
+    line-height: 1.45;
+    letter-spacing: 0.05em;
+    margin-top: 12px;
+
+    @include g.mq() {
+        font-size: 44px;
+        margin-top: 16px;
+    }
+}
+
+.c-page-kv-single-img {
+    order: -1;
+
+    @include g.mq(lg) {
+        order: 0;
+        position: absolute;
+        right: 0;
+        bottom: -71px;
+        width: 484px;
+    }
+
+    img {
+        aspect-ratio: 338/169;
+        object-fit: cover;
+        border-radius: 0 0 0 32px;
+        border: 1px solid var(--color-border);
+
+        @include g.mq() {
+            border-radius: 0 0 0 56px;
+        }
+
+        @include g.mq(lg) {
+            aspect-ratio: 484/323;
+        }
+    }
+}
