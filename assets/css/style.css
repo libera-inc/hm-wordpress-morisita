@@ -2305,6 +2305,18 @@ page > access > access-post
   }
 }
 
+.access-post:not(:first-child) {
+  border-top: 1px solid var(--color-border);
+  margin-top: 40px;
+  padding-top: 40px;
+}
+@media screen and (min-width: 768px) {
+  .access-post:not(:first-child) {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
 @media screen and (min-width: 768px) {
   .access-post:nth-child(1) {
     grid-column: 1/-1;
