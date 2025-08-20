@@ -4,8 +4,14 @@
             <?php echo esc_html( get_the_time( get_option( 'date_format' ) ) ); ?>
         </time>
 
+        <?php if ( is_front_page() ) : ?>
+        <h3 class="c-news-post-title">
+            <?php the_title(); ?>
+        </h3>
+        <?php else : ?>
         <h2 class="c-news-post-title">
             <?php the_title(); ?>
         </h2>
+        <?php endif; ?>
     </a>
 </article>

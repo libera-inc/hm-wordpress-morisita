@@ -17,8 +17,14 @@
         </div>
         <?php endif; ?>
 
+        <?php if ( is_front_page() ) : ?>
+        <h3 class="c-product-post-title">
+            <span><?php the_title(); ?></span>
+        </h3>
+        <?php else : ?>
         <h2 class="c-product-post-title">
             <span><?php the_title(); ?></span>
         </h2>
+        <?php endif; ?>
     </a>
 </div>
